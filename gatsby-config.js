@@ -9,10 +9,18 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Conformed to Christ`,
+    description: `The Conformed to Christ podcast, where we seek to engage the mind affect the heart, and call people to follow Christ.`,
+    author: `Christ's Fellowship Church`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteData: {
+      tagline: `"We Aim To Engage the Mind, Affect The Heart, and Call People to Follow Christ."`,
+      mission: `Additionally, our aim is to introduce and explain passages of Scripture and difficult theological doctrines in a down-to-earth and easy-to-grasp manner. Theology and the Bible should impact your life and our goal is that we might play a small part in seeing that happen.`,
+      georgeData: {},
+      jayData: {},
+      larryData: {}
+
+    }
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -28,15 +36,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Conformed to Christ`,
+        short_name: `C2C Podcast`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#000000`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
+        theme_color: `#000000`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        //change this to a small logo for the conformed to Christ podcast 
       },
     },
   ],
