@@ -1,14 +1,16 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <h1 align="center">
-  Conformed to Christ Podcast
+  <strong>Conformed to Christ Podcast</strong>
 </h1>
 
 <p>The Conformed to Christ podcast, where we seek to engage the mind affect the heart, and call people to follow Christ.</p>
 
+---
+v0.1.0 - Getting Started!
 
-** # Gatsby Related Documentation **
+## **Gatsby Related Documentation**
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+
 
 ## 🚀 Quick start
 
@@ -95,4 +97,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 The fastest way to combine your favorite tools and APIs to build the fastest sites, stores, and apps for the web. And also the best place to build, deploy, and host your Gatsby sites.
 
 <!-- AUTO-GENERATED-CONTENT:END -->
-# ConformedToChrist
+
