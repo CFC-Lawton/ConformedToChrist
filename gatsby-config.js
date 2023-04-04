@@ -31,6 +31,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-podcast-rss-feed`,
+      options: {
+        feedURL: `https://feed.podbean.com/conformedtochrist/feed.xml`,
+        id: 'guid',
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
