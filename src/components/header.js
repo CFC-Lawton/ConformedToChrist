@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components";
 
-const headerStyle = styled.header`
+const HeaderStyle = styled.header`
   margin: 0 auto;
   padding: var(--space-4), var(--size-gutter);
   display: flex;
@@ -12,7 +12,7 @@ const headerStyle = styled.header`
 `;
 
 const Header = ({ siteTitle }) => (
-  <headerStyle>
+  <HeaderStyle>
     <Link
       to="/"
       style={{
@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => (
         <li style={{ listStyle: "none" }}>Podcasts</li>
       </ul>
     </nav>
-  </headerStyle >
+  </HeaderStyle >
 )
 
 export default Header
