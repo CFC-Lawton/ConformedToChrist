@@ -37,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--font-md);
     line-height: var(--line-height-normal);
     overflow-y: scroll;
+    background: var(--color-code-bg);
   }
   
   body {
