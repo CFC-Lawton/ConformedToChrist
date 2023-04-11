@@ -18,6 +18,7 @@ const HeaderStyle = styled.header`
     justifyContent:flex-start;
     display:flex;
     padding-left: 10px;
+    font-size:1.5rem;
     a{
       color: var(--color-text);
       text-decoration:none;
@@ -41,6 +42,9 @@ const HeaderStyle = styled.header`
     flex-direction: row-reverse;
     flex:3;
     marginLeft:10px;
+    color:var(--c2c-red);
+    font-size: 1.2rem;
+    font-weight:bold;
     ul{
       display: flex;
       flex-direction:row;
@@ -67,10 +71,6 @@ const Header = ({ siteTitle }) => (
     <h1>
       <Link
         to="/"
-        style={{
-          fontSize: `var(--font-sm)`,
-          textDecoration: `none`,
-        }}
       >
         {siteTitle}
       </Link></h1>

@@ -7,15 +7,12 @@ const GlobalStyle = createGlobalStyle`
     --color-text: #fff;
     --color-primary: #7026b9;
     --color-code-bg: #000000;
+    --c2c-red:#950d0d;
     --color-code: #8a6534;
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
       sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --font-lg: 18px;
-    --font-md: 16px;
-    --font-sm: 14px;
-    --font-sx: 12px;
     --line-height-loose: 1.75;
     --line-height-normal: 1.5;
     --line-height-dense: 1.1;
