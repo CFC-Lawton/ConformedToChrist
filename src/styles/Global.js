@@ -1,4 +1,3 @@
-import * as React from "react"
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -9,8 +8,7 @@ const GlobalStyle = createGlobalStyle`
     --color-code-bg: #000000;
     --c2c-red:#950d0d;
     --color-code: #8a6534;
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-      sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --font-sans: "Open Sans";
     --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --line-height-loose: 1.75;

@@ -1,7 +1,2 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
- */
-
-// You can delete this file if you're not using it
+import "@fontsource/open-sans/500.css" // Weight 500.
+import "@fontsource/open-sans/700.css" // Select either normal or italic.

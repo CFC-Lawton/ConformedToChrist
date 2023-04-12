@@ -10,7 +10,25 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header";
 import GlobalStyle from "../styles/Global";
+import styled from 'styled-components';
 import 'normalize.css';
+
+const LargeHeaderContainer = styled.div`
+  width:550px; 
+  margin: 0 auto;
+`;
+
+
+const LargeHeaderText = styled.span`
+  font-size: 5rem;
+  margin: 0;
+`;
+
+const SmallHeaderText = styled.span`
+  font-size:3rem;
+  margin:0;
+  padding-left: 10px;
+`;
 
 
 
@@ -25,6 +43,10 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const headerText = data.site.siteMetadata?.title.toUpperCase().split(' ');
+
+  console.log(headerText);
+
   return (
     <>
       <GlobalStyle />
@@ -36,6 +58,14 @@ const Layout = ({ children }) => {
           padding: `var(--size-gutter)`,
         }}
       >
+        <LargeHeaderContainer>        <h1>
+          <LargeHeaderText>{headerText[0]}</LargeHeaderText>
+          <br />
+          <SmallHeaderText>{headerText[1] + " "}</SmallHeaderText>
+          <LargeHeaderText>{headerText[2]}</LargeHeaderText>
+        </h1>
+        </LargeHeaderContainer>
+
         <main>{children}</main>
         <footer
           style={{

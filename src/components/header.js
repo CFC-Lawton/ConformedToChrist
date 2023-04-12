@@ -12,6 +12,8 @@ const HeaderStyle = styled.header`
   background: var(--color-code-bg);
   position: fixed;
   width:100%;
+  font-family: var(--font-sans);
+
   
   h1{
     flex:1;
