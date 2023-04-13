@@ -10,7 +10,7 @@
 module.exports = {
   siteMetadata: {
     title: `Conformed to Christ`,
-    description: `The Conformed to Christ podcast, where we seek to engage the mind affect the heart, and call people to follow Christ.`,
+    description: `We Seek to Engage the Mind Affect the Heart, and Call People to Follow Christ.`,
     author: `Christ's Fellowship Church`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     siteContentData: {

@@ -13,21 +13,66 @@ import GlobalStyle from "../styles/Global";
 import styled from 'styled-components';
 import 'normalize.css';
 
-const LargeHeaderContainer = styled.div`
-  width:550px; 
-  margin: 0 auto;
+const LargeHeaderContainerBreak = styled.br`
+  display:none;
+  @media (min-width:399px){
+    display:block;
+  }
 `;
 
+const LargeHeaderContainer = styled.div`
+  width: 100%;
+  margin: 100px auto;
+  @media (min-width:399px){
+    width: 50%;  
+  }
+  @media (min-width:700px){
+    width:550px; 
+    
+  }
+`;
+
+const LargeHeaderH1 = styled.h1`
+line-height: 1.2rem; 
+  @media(min-width:399px){
+    line-height: 2rem;
+  }
+  @media (min-width:700px){
+    line-height: 3.5rem;
+  }
+  
+`
 
 const LargeHeaderText = styled.span`
-  font-size: 5rem;
+  font-size: 60%;
+  width:100%;
   margin: 0;
+  text-align:center;
+  display:block;
+  @media (min-width:399px){
+    font-size: 80%;
+    display:initial;
+  }
+  @media (min-width:700px){
+    font-size: 5rem;
+  }
 `;
 
 const SmallHeaderText = styled.span`
-  font-size:3rem;
+  font-size:30%;
+  width:100%;
   margin:0;
-  padding-left: 10px;
+  padding-left: 0px;
+  display:block;
+  text-align:center;
+  @media (min-width:399px){
+    font-size: 50%;
+    display:initial;
+    padding:10px;    
+  }
+  @media (min-width:700px){
+    font-size:3rem;
+  }
 `;
 
 
@@ -45,7 +90,6 @@ const Layout = ({ children }) => {
 
   const headerText = data.site.siteMetadata?.title.toUpperCase().split(' ');
 
-  console.log(headerText);
 
   return (
     <>
@@ -58,12 +102,13 @@ const Layout = ({ children }) => {
           padding: `var(--size-gutter)`,
         }}
       >
-        <LargeHeaderContainer>        <h1>
-          <LargeHeaderText>{headerText[0]}</LargeHeaderText>
-          <br />
-          <SmallHeaderText>{headerText[1] + " "}</SmallHeaderText>
-          <LargeHeaderText>{headerText[2]}</LargeHeaderText>
-        </h1>
+        <LargeHeaderContainer>
+          <LargeHeaderH1>
+            <LargeHeaderText>{headerText[0]}</LargeHeaderText>
+            <LargeHeaderContainerBreak />
+            <SmallHeaderText>{headerText[1] + " "}</SmallHeaderText>
+            <LargeHeaderText>{headerText[2]}</LargeHeaderText>
+          </LargeHeaderH1>
         </LargeHeaderContainer>
 
         <main>{children}</main>

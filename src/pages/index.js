@@ -5,39 +5,48 @@ import { useStaticQuery, graphql } from "gatsby";
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import CalloutBox from "../components/calloutbox";
 //import * as styles from "../components/index.module.css"
 
 
 
 
 const IndexPage = () => {
-  const podcastData = useStaticQuery(graphql`query MyQuery {
-    allPodcastRssFeedEpisode {
-      edges {
-        node {
-          id
-          item {
-            title
-            pubDate
-            enclosure {
-              url
-              length
-            }
-            content
-            content
+  const mainPageQuery = useStaticQuery(graphql`query MyQuery {
+    site {
+    siteMetadata {
+      description
+    }
+  }
+  allPodcastRssFeedEpisode {
+    edges {
+      node {
+        id
+        item {
+          title
+          pubDate
+          enclosure {
+            url
+            length
+          }
+          content
           itunes {
             image
             episode
           }
-          }
         }
       }
     }
+  }
   }`)
-  const data = podcastData.allPodcastRssFeedEpisode.edges;
-  console.log(data);
+
+  const data = mainPageQuery.allPodcastRssFeedEpisode.edges;
+
   return (
     <Layout>
+      <CalloutBox>
+        <p>{`"${mainPageQuery.site.siteMetadata.description}"`}</p>
+      </CalloutBox>
       <br /><br /><br /><br /><br /><br /><br />
       {data.map((item) => {
 
