@@ -1,12 +1,10 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby";
-// import { Link } from "gatsby"
-// import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import CalloutBox from "../components/calloutbox";
-//import * as styles from "../components/index.module.css"
+import Mission from "../components/mission";
 
 
 
@@ -47,7 +45,9 @@ const IndexPage = () => {
       <CalloutBox>
         <p>{`"${mainPageQuery.site.siteMetadata.description}"`}</p>
       </CalloutBox>
-      <br /><br /><br /><br /><br /><br /><br />
+      <br />
+      <Mission />
+      <br /><br /><br /><br /><br /><br />
       {data.map((item) => {
 
         return (<div key={item.node.id}><h2 >Episode {item.node.item.itunes.episode}: {item.node.item.title}</h2>
