@@ -15,7 +15,7 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     siteContentData: {
       tagline: `"We Aim To Engage the Mind, Affect The Heart, and Call People to Follow Christ."`,
-      mission: `Additionally, our aim is to introduce and explain passages of Scripture and difficult theological doctrines in a down-to-earth and easy-to-grasp manner. Theology and the Bible should impact your life and our goal is that we might play a small part in seeing that happen.`,
+      mission: `"Additionally, our aim is to introduce and explain passages of Scripture and difficult theological doctrines in a down-to-earth and easy-to-grasp manner. Theology and the Bible should impact your life and our goal is that we might play a small part in seeing that happen."`,
       georgeData: {},
       jayData: {},
       larryData: {}
