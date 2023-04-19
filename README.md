@@ -7,6 +7,7 @@
 
 ---
 v0.1.0 - Getting Started!
+v0.4.0 - Podcasts Ported into the application, Call Out box and mission components implemented. Layout and Design being implemented component by component
 
 ## **Gatsby Related Documentation**
 

@@ -16,21 +16,22 @@ const MissionContainer = styled.div`
 const HostImage = styled.div`
     display:block;
     flex:5;
+    justify-content:center;
     
 `
 const HostImageWrap = styled.div`
     width:80%;
     margin:0 auto;
     @media (min-width:700px){
-        width:160px;
-        margin:0;
+        width:250px;
+        margin:10% 0;
     }
     @media (min-width:1000px){
-        width: 170px;
+        width: 196px;
     }
 `;
 
-//need to fix 700px layout on picture 
+
 
 
 const HostContainer = styled.div`
@@ -38,6 +39,7 @@ const HostContainer = styled.div`
     flex-direction: column;
     @media (min-width: 700px){
         flex-direction:row;
+        justify-content:center;
     }
 `;
 
@@ -52,13 +54,14 @@ const HostDecorator = styled.div`
         margin: 10px 10px 10px 10px;
         border-left: 15px solid var(--c2c-red);
         border-bottom:none;
+        align-self:center;
     }
 `
 
 const MissionText = styled.div`
     flex:1;
     flex-direction:column;
-
+    justify-content:center;
     p{
         padding 10px 10px 10px 20px;
     }
@@ -68,10 +71,14 @@ const MissionText = styled.div`
 const TopMissionDecorator = styled.div`
 display:none;
 @media (min-width:700px){
+    align-self:center;
     width:80%;
     display:block;
-    margin: 0 auto 20px auto;
+    margin: 10% auto 20px auto;
     border-bottom: 10px solid var(--c2c-red);
+}
+@media (min-width:1000px){
+    margin: 27px auto 20px auto;
 }
 
 `
@@ -80,6 +87,7 @@ width:80%;
 margin: 20px auto 20px auto;
 border-bottom: 10px solid var(--c2c-red);
 @media (min-width:700px){
+    align-self:center;
     margin: 20px auto 20px auto;
 }
 `

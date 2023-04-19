@@ -11,6 +11,7 @@ const HeaderStyle = styled.header`
   justifyContent: space-between;
   background: var(--color-code-bg);
   position: fixed;
+  z-index:9999;
   width:100%;
   font-family: var(--font-sans);
 
