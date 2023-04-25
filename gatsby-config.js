@@ -30,7 +30,7 @@ module.exports = {
           }
         },
         {
-          image: '../images/NameOfImage.xxx', flowDirection: 'right', bioContent: {
+          image: '../images/George_Mayes.png', flowDirection: 'right', bioContent: {
             name: 'Larry Smith',
             bio: [`George Mayes is a pastor at Christ's Fellowship Church in Lawton, Oklahoma. A graduate of The Southern Baptist Theological Seminary, George has served in various ministerial roles across Oklahoma since 2003. He was a pastor of Northwest Baptist Church for two years before they merged with Redeemer Church to form Christ's Fellowship Church in 2018.`, `George is an avid reader, movie-lover, and student of the Bible. He is committed to expository preaching and teaching the Bible clearly.`, `George has been married to his college sweetheart, Julia for 18 years and they have four children.`]
           }
