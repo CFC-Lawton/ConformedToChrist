@@ -17,7 +17,6 @@ const IndexPage = () => {
       description
       siteContentData {
         hosts {
-          image
           flowDirection
           bioContent {
             name
@@ -45,8 +44,9 @@ const IndexPage = () => {
       node {
         id
         childrenImageSharp {
-          fluid {
+          fluid(webpQuality: 10){
             base64
+            srcSetWebp
             originalName
           }
         }
@@ -74,14 +74,25 @@ const IndexPage = () => {
     }
   }
   }`)
-  console.log(mainPageQuery);
   const data = mainPageQuery.allPodcastRssFeedEpisode.edges;
 
 
+  //combine Host Data with the Host images
+  const hostData = mainPageQuery.site.siteMetadata.siteContentData.hosts.map(host => {
+    let hostName = host.bioContent.name.toLowerCase().split(' ').join('');
+    let hostImage = mainPageQuery.allFile.edges.filter(hostimg => {
+      let img = hostimg.node.childrenImageSharp[0].fluid.originalName.toLowerCase().split('_').join('').split('.')[0];
+      if (img === hostName) {
+        return hostimg.node.childrenImageSharp[0];
+      }
+    })
+    return {
+      image: hostImage,
+      flowDirection: host.flowDirection,
+      bioContent: host.bioContent,
+    }
+  });
 
-  //create a new array with the image data for each host with the image data appended to it from the allFile Query, will need to make sure the image matches the host by name 
-  const hostData = mainPageQuery.site.siteMetadata.siteContentData.hosts;
-  //grab the image with a page query for each element and then merge the image into the data 
 
   return (
     <Layout>

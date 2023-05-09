@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
+
 import { StaticImage } from 'gatsby-plugin-image';
 
 //Assumptions
@@ -13,10 +13,9 @@ const HostContainer = styled.div`
     display:flex;
 `
 
-
+/// look into gatsbyImage component
 export default function Host({ image, flowDirection, bioContent }) {
     console.log(image, flowDirection, bioContent);
-    const Image = `${image}`;
 
 
     return (

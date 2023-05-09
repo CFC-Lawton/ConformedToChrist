@@ -18,13 +18,13 @@ module.exports = {
       mission: `"Additionally, our aim is to introduce and explain passages of Scripture and difficult theological doctrines in a down-to-earth and easy-to-grasp manner. Theology and the Bible should impact your life and our goal is that we might play a small part in seeing that happen."`,
       hosts: [
         {
-          image: '../images/George_Mayes.png', flowDirection: 'right', bioContent: {
+          flowDirection: 'right', bioContent: {
             name: 'George Mayes',
             bio: [`George Mayes is a pastor at Christ's Fellowship Church in Lawton, Oklahoma. A graduate of The Southern Baptist Theological Seminary, George has served in various ministerial roles across Oklahoma since 2003. He was a pastor of Northwest Baptist Church for two years before they merged with Redeemer Church to form Christ's Fellowship Church in 2018.`, `George is an avid reader, movie-lover, and student of the Bible. He is committed to expository preaching and teaching the Bible clearly.`, `George has been married to his college sweetheart, Julia for 18 years and they have four children.`]
           }
         },
         {
-          image: '../images/Jay_Jones.png', flowDirection: 'left', bioContent: {
+          flowDirection: 'left', bioContent: {
             name: 'Jay Jones',
             bio: [`Prior to becoming a pastor Jay served 9 years in the Army. Prior to the Army Jay was a plumber in Lawton.`, `Jay is a graduate of Cameron University where he played baseball. He received his Master of Divinity from Midwestern Baptist Theological Seminary and recently graduated with a Doctoral degree in Expository Preaching from The Masters Seminary.  He is passionate about helping others see clearly what the Bible says and how it shows us clearly the supremacy of Christ and the beauty of the gospel.`, `Jay has been married to Angie for 19 years. They have three wonderful children; Drake, Brooke, and Evangeline.`]
           }
