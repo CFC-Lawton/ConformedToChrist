@@ -44,12 +44,9 @@ const IndexPage = () => {
       node {
         id
         childrenImageSharp {
-          fluid(webpQuality: 10){
-            base64
-            srcSetWebp
-            originalName
-          }
+          gatsbyImageData(placeholder: DOMINANT_COLOR, webpOptions: {quality: 10})
         }
+        relativePath
       }
     }
   }
@@ -77,11 +74,12 @@ const IndexPage = () => {
   const data = mainPageQuery.allPodcastRssFeedEpisode.edges;
 
 
+
   //combine Host Data with the Host images
   const hostData = mainPageQuery.site.siteMetadata.siteContentData.hosts.map(host => {
     let hostName = host.bioContent.name.toLowerCase().split(' ').join('');
     let hostImage = mainPageQuery.allFile.edges.filter(hostimg => {
-      let img = hostimg.node.childrenImageSharp[0].fluid.originalName.toLowerCase().split('_').join('').split('.')[0];
+      let img = hostimg.node.relativePath.toLowerCase().split('/')[1].split('_').join('').split('.')[0];
       if (img === hostName) {
         return hostimg.node.childrenImageSharp[0];
       }
@@ -92,6 +90,8 @@ const IndexPage = () => {
       bioContent: host.bioContent,
     }
   });
+
+
 
 
   return (
