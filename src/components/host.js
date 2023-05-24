@@ -8,11 +8,12 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 const HostContainer = styled.div`
  width:100%;
  display:flex;
-flex-direction: row-reverse;
+flex-direction: reverse;
 `;
 
 const HostImage = styled.div`
 flex:1;
+margin-top: 35px;
 `;
 
 const HostDescription = styled.div`
@@ -26,7 +27,7 @@ const HostName = styled.div`
     text-align:center;
     width:70%;
     border-bottom: solid 4px var(--c2c-red);
-    margin: 0 auto;
+    margin: 0 auto;--
 
     h2{
         padding:0;
@@ -53,7 +54,7 @@ export default function Host({ image, flowDirection, bioContent }) {
                     <h2>{bioContent.name}</h2>
                 </HostName>
                 <div>
-                    {bioContent.bio.map(sentence => <p>{sentence}</p>)}
+                    {bioContent.bio.map((sentence, i) => <p key={`${bioContent.name.split(' ').join('')}${i}`}>{sentence}</p>)}
                 </div>
             </HostDescription>
         </HostContainer>
