@@ -8,7 +8,32 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 const HostContainer = styled.div`
  width:100%;
  display:flex;
-flex-direction: reverse;
+flex-direction: row;
+`;
+
+
+const HostImageWrap = styled.div`
+    width:80%;
+    margin:0 auto;
+    @media (min-width:700px){
+        width:300px;
+        margin:10% 0;
+    }
+    @media (min-width:1000px){
+        width: 300px;
+    }
+`;
+
+
+
+
+const HostImageContainer = styled.div`
+    display:flex;
+    flex-direction: column;
+    @media (min-width: 700px){
+        flex-direction:row;
+        justify-content:center;
+    }
 `;
 
 const HostImage = styled.div`
@@ -22,12 +47,19 @@ display:flex;
 flex-direction:column;
 `;
 
+const HostDecorator = styled.span`
+ display:block;
+ width: 10px;
+ height: 80%; 
+ margin: 16% 10px;
+ border-left: 15px solid var(--c2c-red);
+`
 
 const HostName = styled.div`
     text-align:center;
     width:70%;
     border-bottom: solid 4px var(--c2c-red);
-    margin: 0 auto;--
+    margin: 0 auto;
 
     h2{
         padding:0;
@@ -46,9 +78,14 @@ export default function Host({ image, flowDirection, bioContent }) {
 
     return (
         <HostContainer>
-            <HostImage>
-                <GatsbyImage image={image[0].node.childrenImageSharp[0].gatsbyImageData} alt={bioContent.name} />
-            </HostImage>
+            <HostImageContainer>
+                <HostImageWrap>
+                    <HostImage>
+                        <GatsbyImage image={image[0].node.childrenImageSharp[0].gatsbyImageData} alt={bioContent.name} />
+                    </HostImage>
+                </HostImageWrap>
+                <HostDecorator />
+            </HostImageContainer>
             <HostDescription>
                 <HostName>
                     <h2>{bioContent.name}</h2>
