@@ -8,7 +8,10 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 const HostContainer = styled.div`
  width:100%;
  display:flex;
-flex-direction: row;
+ flex-direction: column;
+ @media (min-width: 1000px){
+    flex-direction: row; 
+ } 
 `;
 
 
@@ -58,7 +61,7 @@ const HostDecorator = styled.span`
 const HostName = styled.div`
     text-align:center;
     width:70%;
-    border-bottom: solid 4px var(--c2c-red);
+    border-bottom: solid 7px var(--c2c-red);
     margin: 0 auto;
 
     h2{
