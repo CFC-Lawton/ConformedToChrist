@@ -6,6 +6,7 @@ import Seo from "../components/seo"
 import CalloutBox from "../components/calloutbox";
 import Mission from "../components/mission";
 import Host from "../components/host";
+import Podcasts from "../components/podcast";
 
 
 
@@ -71,7 +72,8 @@ const IndexPage = () => {
     }
   }
   }`)
-  const data = mainPageQuery.allPodcastRssFeedEpisode.edges;
+  const podcasts = mainPageQuery.allPodcastRssFeedEpisode.edges;
+  
 
 
 
@@ -104,13 +106,7 @@ const IndexPage = () => {
       <br />
       {hostData.map(host => <Host image={host.image} flowDirection={host.flowDirection} bioContent={host.bioContent} key={host.bioContent.name} />)}
       <br /><br /><br /><br /><br />
-      {data.map((item) => {
-
-        return (<div key={item.node.id}><h2 >Episode {item.node.item.itunes.episode}: {item.node.item.title}</h2>
-          <img src={item.node.item.itunes.image} />
-        </div>)
-
-      })}
+      <Podcasts podcasts={podcasts}/>
     </Layout >
   )
 }
