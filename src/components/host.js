@@ -7,6 +7,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 const HostWrapper = styled.div`
     width:100%;
+    margin-top: 50px;
 `
 
 const HostContainerLeft = styled.div`
@@ -32,7 +33,7 @@ const HostImageWrap = styled.div`
     width:80%;
     margin:0 auto;
     @media (min-width:700px){
-        width:300px;
+        width:70%;
         margin:10% 0;
     }
     @media (min-width:1000px){
@@ -61,35 +62,44 @@ const HostDescription = styled.div`
 flex: 2;
 display:flex;
 flex-direction:column;
+padding: 20px;
 `;
 
 const HostDecorator = styled.span`
- display:block;
+ display:none;
+ @media (min-width: 1000px){
+    margin: 16% 10px;
+    display:block;
  width: 10px;
  height: 80%; 
- margin: 16% 10px;
  border-left: 15px solid var(--c2c-red);
+ }
 `
 
 const HostName = styled.div`
     text-align:center;
     width:70%;
     border-bottom: solid 7px var(--c2c-red);
-    margin: 0 auto;
+    margin: 10px auto;
 
     h2{
         padding:0;
         margin:0;
     }
+
+    @media (min-width:1000px){
+        margin: 0 auto;
+    }
 `;
 
 
 function HostLeft({ image, bioContent }) {
+    return (
     <HostContainerLeft>
         <HostImageContainer>
             <HostImageWrap>
                 <HostImage>
-                    <GatsbyImage image={image[0].node.childrenImageSharp[0].gatsbyImageData} alt={bioContent.name} />
+                    <GatsbyImage style={{borderRadius:'15px'}} image={image[0].node.childrenImageSharp[0].gatsbyImageData} alt={bioContent.name} />
                 </HostImage>
             </HostImageWrap>
             <HostDecorator />
@@ -103,17 +113,20 @@ function HostLeft({ image, bioContent }) {
             </div>
         </HostDescription>
     </HostContainerLeft>
+    )
 }
 
 function HostRight({ image, bioContent }) {
+    return(
     <HostContainerRight>
         <HostImageContainer>
+        <HostDecorator />
             <HostImageWrap>
                 <HostImage>
-                    <GatsbyImage image={image[0].node.childrenImageSharp[0].gatsbyImageData} alt={bioContent.name} />
+                    <GatsbyImage style={{borderRadius:'15px'}} image={image[0].node.childrenImageSharp[0].gatsbyImageData} alt={bioContent.name} />
                 </HostImage>
             </HostImageWrap>
-            <HostDecorator />
+            
         </HostImageContainer>
         <HostDescription>
             <HostName>
@@ -124,17 +137,21 @@ function HostRight({ image, bioContent }) {
             </div>
         </HostDescription>
     </HostContainerRight>
+    )
 }
 
 function HostComponent({ image, flowDirection, bioContent }) {
     let direction = flowDirection.toLowerCase();
+    console.log(direction)
 
-    if (direction = 'left') {
+    if (direction === 'left') {
         return <HostLeft image={image} bioContent={bioContent} />
-    } else if (direction = 'right') {
+
+    } else if (direction === 'right') {
         return <HostRight image={image} bioContent={bioContent} />
+
     } else {
-        console.log('lol')
+        console.error(`flowDirection must have either a 'right' or 'left' value,  the value '${direction}' is not a valid choice`);
     }
 
 
@@ -144,7 +161,7 @@ function HostComponent({ image, flowDirection, bioContent }) {
 export default function Host({ image, flowDirection, bioContent }) {
     return (
         <HostWrapper>
-            {/* <HostComponent image={image} flowDirection={flowDirection} bioContent={bioContent} /> */}
+            <HostComponent image={image} flowDirection={flowDirection} bioContent={bioContent} />
         </HostWrapper>
     )
 }
