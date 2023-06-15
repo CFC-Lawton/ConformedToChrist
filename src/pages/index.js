@@ -6,7 +6,7 @@ import Seo from "../components/seo"
 import CalloutBox from "../components/calloutbox";
 import Mission from "../components/mission";
 import Host from "../components/host";
-import Podcasts from "../components/podcast";
+import Podcasts from "../components/podcasts";
 
 
 

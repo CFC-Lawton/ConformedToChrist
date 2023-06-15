@@ -1,18 +1,29 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
- */
+exports.createPages = async function ({actions, graphql}){
+  const data = await graphql(`
+    query{
+      allPodcastRssFeedEpisode {
+        edges {
+          node {
+            id
+            item {
+              title
+              itunes {
+                episode
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  console.log(data.allPodcastRSSFeedEpisode);
 
-/**
- * @type {import('gatsby').GatsbyNode['createPages']}
- */
-exports.createPages = async ({ actions }) => {
-  const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
-  })
+    data.allPodcastRssFeedEpisode.edges.forEach(podcast =>{
+      const slug = `/Episode-${podcast.node.item.itunes.episode}-${podcast.node.item.title.split(' ').join('-')}`
+      console.log(slug);
+      actions.createPage({
+        path:slug,
+      })
+    })
+  
 }
