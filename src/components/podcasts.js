@@ -70,7 +70,7 @@ export default function Podcasts({podcasts}){
                         <img src={podcast.node.item.itunes.image} alt={`Podcast cover image of Episode #${podcast.node.item.itunes.episode}:${podcast.node.item.title}`}/>
                         <h3>{`Episode #${podcast.node.item.itunes.episode}: ${podcast.node.item.title}`}</h3>
                         <p>{`${podcast.node.item.content.split('>')[1].split('<')[0].substring(0, 200)}...`}</p>
-                        <Link to={`/Episode-${podcast.node.item.itunes.episode}-${podcast.node.item.title.split(' ').join('-')}`}>
+                        <Link to={`/Episode-${podcast.node.item.itunes.episode}`}>
                         <button >Listen</button>
                         </Link>
                     </Podcast>

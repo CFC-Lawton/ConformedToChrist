@@ -1,3 +1,5 @@
+
+
 exports.createPages = async function ({actions, graphql}){
   const data = await graphql(`
     query{
@@ -15,14 +17,16 @@ exports.createPages = async function ({actions, graphql}){
         }
       }
     }
-  `)
-  console.log(data.allPodcastRSSFeedEpisode);
+  `);
+  
+   data.data.allPodcastRssFeedEpisode.edges.forEach(edge=>{
+      const slug = `Episode-${edge.node.item.itunes.episode}`
+      console.log(`Building page ${edge.node.item.title}`)
 
-    data.allPodcastRssFeedEpisode.edges.forEach(podcast =>{
-      const slug = `/Episode-${podcast.node.item.itunes.episode}-${podcast.node.item.title.split(' ').join('-')}`
-      console.log(slug);
       actions.createPage({
         path:slug,
+        component:require.resolve('./src/templates/podcast.js'),
+        context:{id: edge.node.id}
       })
     })
   
