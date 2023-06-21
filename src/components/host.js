@@ -142,7 +142,7 @@ function HostRight({ image, bioContent }) {
 
 function HostComponent({ image, flowDirection, bioContent }) {
     let direction = flowDirection.toLowerCase();
-    console.log(direction)
+    
 
     if (direction === 'left') {
         return <HostLeft image={image} bioContent={bioContent} />

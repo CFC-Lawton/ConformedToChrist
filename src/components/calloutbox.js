@@ -15,6 +15,7 @@ const CalloutBoxStyle = styled.div`
     padding: 15px;
   }
   @media (min-width:700px){
+    margin: 50px auto;
     p{
         font-size:1.7rem;
         padding:25px;

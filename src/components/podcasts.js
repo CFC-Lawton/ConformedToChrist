@@ -61,7 +61,6 @@ const Podcast = styled.div`
 
 
 export default function Podcasts({podcasts}){
-    console.log(podcasts);
     return (
         <PodcastsWrapper>
             {podcasts.map((podcast)=>{

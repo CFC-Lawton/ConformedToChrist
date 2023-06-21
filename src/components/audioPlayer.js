@@ -4,15 +4,27 @@ import styled from 'styled-components';
 import { ImForward2, ImBackward, ImPlay2, ImPause } from "react-icons/im";
 
 
-const PodcastImage = styled.img`
+const PodcastContainer = styled.div`
+    display: flex;
+    flex-direction:column;
     width: 80%;
+    margin: 50px auto;
+    @media (min-width:1000px){
+        flex-direction:row;
+    }
+`
+
+const PodcastImage = styled.img`
+    width: 50%;
     margin: 0 auto;
     display: block;
     border-radius: 10px;
     border-bottom: 10px solid var(--c2c-red);
     border-top: 10px solid var(--c2c-red);
     @media (min-width:1000px){
-        width:50%;
+        width:200px;
+        height:200px;
+        margin: 35px auto;
     }
 `;
 
@@ -20,14 +32,17 @@ const AudioPlayerContainer = styled.div`
     display:flex;
     flex-direction:column;
     width:100%;
+
+    h1{
+        font-size: 2rem;
+        padding:30px;
+    }
 `;
 
 const ProgressContainer = styled.div`
     flex:1;
     display:flex;
-    div input{
-        flex:4;
-    }
+    padding:0 30px 0 30px;
 `;
 
 const Bar = styled.input`
@@ -109,7 +124,7 @@ const Button = styled.div`
 `;
 
 const ButtonContainer = styled.div`
-    margin:25px auto;
+    margin:0 auto 50px auto;
     display:flex;
     flex:1;
     width: 75%
@@ -191,19 +206,20 @@ export default function AudioPlayer({image, title, urlSrc, episode}){
     }
 
     return(
-        <>
+        <PodcastContainer>
             <PodcastImage src={image}/>
             <audio  onLoadedMetadata={onLoadedMetadata} ref={audioPlayer} src={urlSrc} preload ="true"/>
             <AudioPlayerContainer>
+             <h1>{title}</h1>   
             <ProgressContainer>
             {/* current time */}
-            <div>{calculateTime(currentTime)}</div>
+            <div><p>{calculateTime(currentTime)}</p></div>
             {/* progress bar */}
             
                 <Bar type="range" defaultValue="0" ref={progressBar} onChange={changeRange}/>
             
             {/* duration */}
-            <div>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
+            <div><p>{(duration && !isNaN(duration)) && calculateTime(duration)}</p></div>
             </ProgressContainer>
             <ButtonContainer>
             <Button onClick={backThirty}><ImBackward/></Button>
@@ -211,6 +227,6 @@ export default function AudioPlayer({image, title, urlSrc, episode}){
             <Button onClick={forwardThirty}><ImForward2/></Button>
             </ButtonContainer>
             </AudioPlayerContainer>
-        </>
+        </PodcastContainer>
     )
 }

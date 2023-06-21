@@ -7,6 +7,7 @@ import CalloutBox from "../components/calloutbox";
 import Mission from "../components/mission";
 import Host from "../components/host";
 import Podcasts from "../components/podcasts";
+import AudioPlayer from "../components/audioPlayer";
 
 
 
@@ -101,11 +102,10 @@ const IndexPage = () => {
       <CalloutBox>
         <p>{`"${mainPageQuery.site.siteMetadata.description}"`}</p>
       </CalloutBox>
-      <br />
       <Mission />
-      <br />
+      <AudioPlayer image={podcasts[0].node.item.itunes.image} title={podcasts[0].node.item.title} urlSrc={podcasts[0].node.item.enclosure.url} episode={podcasts[0].node.item.itunes.episode}/>
+     
       {hostData.map(host => <Host image={host.image} flowDirection={host.flowDirection} bioContent={host.bioContent} key={host.bioContent.name} />)}
-      <br /><br /><br /><br /><br />
       <Podcasts podcasts={podcasts}/>
     </Layout >
   )

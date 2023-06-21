@@ -14,11 +14,10 @@ export default function Podcast({data}){
     return {__html:html};
   }
 
-  console.log(data)
+  
     return(
       <Layout>
           <AudioPlayer image={data.podcastRssFeedEpisode.item.itunes.image} title={data.podcastRssFeedEpisode.item.title} urlSrc={data.podcastRssFeedEpisode.item.enclosure.url} episode={data.podcastRssFeedEpisode.item.itunes.episode}/>
-          <h1>{`Episode ${data.podcastRssFeedEpisode.item.itunes.episode}: ${data.podcastRssFeedEpisode.item.title}`}</h1>
           <div dangerouslySetInnerHTML={createPodContent(data.podcastRssFeedEpisode.item.content)}/>
           
         </Layout>

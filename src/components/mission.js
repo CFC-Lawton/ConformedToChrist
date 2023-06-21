@@ -10,6 +10,7 @@ const MissionContainer = styled.div`
     flex-direction:column;
     @media (min-width:700px){
         flex-direction:row;
+        margin: 50px auto;
     }
 `;
 
