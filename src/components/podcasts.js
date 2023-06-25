@@ -6,7 +6,8 @@ const PodcastsWrapper = styled.div`
     display:grid;
     width: 80%;
     grid-template-columns: 1fr;
-    margin: 0 auto;
+    margin: 50px auto;
+    padding-bottom: 400px;
     
     
     @media (min-width:700px){
@@ -22,7 +23,7 @@ const PodcastsWrapper = styled.div`
 
 const Podcast = styled.div`
     width: 80%;
-    margin-bottom: 20px;
+    margin: 40px auto;
     img{
         width:100%;
         border-bottom: solid 10px var(--c2c-red);
@@ -52,11 +53,19 @@ const Podcast = styled.div`
     }
 
     @media (min-width:700px){
-        margin-bottom:initial;
+        margin:initial;
     }
     
 `;
 
+
+const SpacerDiv = styled.div`
+  width: 100%;
+  height:100px;
+  padding-bottom: 600px;
+  display:block;
+  
+`;
 
 
 
@@ -75,6 +84,7 @@ export default function Podcasts({podcasts}){
                     </Podcast>
                 )
             })}
+            <SpacerDiv/>
         </PodcastsWrapper>
     )
 }

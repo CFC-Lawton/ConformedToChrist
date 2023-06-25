@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const CalloutBoxStyle = styled.div`
   width: 80%;
-  margin:20px auto;
+  margin:100px auto 20px auto;
   border-left: 15px solid var(--c2c-red);
   p{
     font-size: 1rem;
@@ -15,11 +15,15 @@ const CalloutBoxStyle = styled.div`
     padding: 15px;
   }
   @media (min-width:700px){
-    margin: 50px auto;
+    width:100%;
     p{
         font-size:1.7rem;
         padding:25px;
     }
+  }
+
+  @media (min-width:1000px){
+    margin: 50px auto;
   }
 `
 

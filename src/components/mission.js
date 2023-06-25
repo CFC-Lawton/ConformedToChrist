@@ -5,12 +5,13 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const MissionContainer = styled.div`
     width:80%;
-    margin: 0 auto;
+    margin: 50px auto;
     display:flex;
     flex-direction:column;
     @media (min-width:700px){
         flex-direction:row;
-        margin: 50px auto;
+        margin: 150px auto;
+        width:100%;
     }
 `;
 

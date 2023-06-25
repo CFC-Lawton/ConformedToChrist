@@ -1,5 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby";
+import styled from 'styled-components';
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -8,11 +9,40 @@ import Mission from "../components/mission";
 import Host from "../components/host";
 import Podcasts from "../components/podcasts";
 import AudioPlayer from "../components/audioPlayer";
+import PodcastHosts from "../components/podcastHosts";
+
+
+
+const ContentHeader = styled.h2`
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0px 10px 0px 0px;
+  margin: 0;
+  font-size: 2rem;
+`;
+const HeaderContainer = styled.div`
+  width: 100%;
+  margin-top:150px;
+  margin-bottom: 30px;
+  border-bottom: 10px solid var(--c2c-red);
+
+
+`;
 
 
 
 
-const IndexPage = () => {
+function HeaderText({text, id}){
+  return(
+    <div id={id}>
+    <HeaderContainer>
+      <ContentHeader>{text}</ContentHeader>
+    </HeaderContainer>
+    </div>
+  )
+}
+
+function IndexPage(){
   const mainPageQuery = useStaticQuery(graphql`query MyQuery {
     site {
     siteMetadata {
@@ -96,16 +126,19 @@ const IndexPage = () => {
 
 
 
-
+  const links =[{title:'Home', path:'/'},{title:'Episodes', path:'#episodes'}];
   return (
-    <Layout>
+    <Layout links={links}>
       <CalloutBox>
         <p>{`"${mainPageQuery.site.siteMetadata.description}"`}</p>
       </CalloutBox>
       <Mission />
+      <HeaderText text={'Latest Episode'} id={'latestEpisode'}/>
       <AudioPlayer image={podcasts[0].node.item.itunes.image} title={podcasts[0].node.item.title} urlSrc={podcasts[0].node.item.enclosure.url} episode={podcasts[0].node.item.itunes.episode}/>
-     
+     <HeaderText text={'The Hosts'}/>
       {hostData.map(host => <Host image={host.image} flowDirection={host.flowDirection} bioContent={host.bioContent} key={host.bioContent.name} />)}
+      <HeaderText text="Episodes" id="episodes"/>
+      <PodcastHosts/>
       <Podcasts podcasts={podcasts}/>
     </Layout >
   )

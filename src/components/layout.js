@@ -1,35 +1,52 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header";
 import GlobalStyle from "../styles/Global";
 import styled from 'styled-components';
 import 'normalize.css';
 
+
+
 const LargeHeaderContainerBreak = styled.br`
-  display:none;
-  @media (min-width:399px){
-    display:block;
+  display:block;
+  @media (min-width:1000px){
+    display:none;
   }
 `;
 
 const LargeHeaderContainer = styled.div`
   width: 100%;
   margin: 100px auto;
-  @media (min-width:399px){
-    width: 50%;  
+  display:none;
+
+  a{
+    color:#fff;
+    text-decoration:none;
   }
-  @media (min-width:700px){
+
+  a:link{
+    color:#fff;
+    text-decoration:none;
+  }
+
+  a:hover{
+    color:#fff;
+    text-decoration:none;
+  }
+
+  a:visited{
+    color:#fff;
+    text-decoration:none;
+  }
+
+
+  @media (min-width:1000px){
     width:550px; 
-    
+    display:block;
   }
+  
 `;
 
 const LargeHeaderH1 = styled.h1`
@@ -76,8 +93,23 @@ const SmallHeaderText = styled.span`
 `;
 
 
+const Footer = styled.footer`
+  color:#fff;
+  background: #000;
+  position: fixed;
+  left:0;
+  bottom:0;
+  width: 100%;
+  z-index:9999;
+  fontSize: var(--font-sm);
+  p{
+    margin: 5px 5px 5px 20px;
+    text-align:center;
+  }
+`
 
-const Layout = ({ children }) => {
+
+const Layout = ({ children, links }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -95,7 +127,7 @@ const Layout = ({ children }) => {
     <>
 
       <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} links={links} />
       <div
         style={{
           margin: `0 auto`,
@@ -103,24 +135,25 @@ const Layout = ({ children }) => {
           padding: `var(--size-gutter)`,
         }}
       >
+             
         <LargeHeaderContainer>
+        <Link to="/">  
           <LargeHeaderH1>
             <LargeHeaderText>{headerText[0]}</LargeHeaderText>
             <LargeHeaderContainerBreak />
             <SmallHeaderText>{headerText[1] + " "}</SmallHeaderText>
             <LargeHeaderText>{headerText[2]}</LargeHeaderText>
           </LargeHeaderH1>
+          </Link>
         </LargeHeaderContainer>
+        
+
 
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Christ's Fellowship Church
-        </footer>
+
+        <Footer>
+          <p>© {new Date().getFullYear()} &middot; Christ's Fellowship Church</p>
+        </Footer>
       </div>
     </>
   )

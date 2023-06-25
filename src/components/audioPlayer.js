@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import { ImForward2, ImBackward, ImPlay2, ImPause } from "react-icons/im";
 
 
+
 const PodcastContainer = styled.div`
     display: flex;
     flex-direction:column;
     width: 80%;
-    margin: 50px auto;
+    margin: 60px auto;
     @media (min-width:1000px){
         flex-direction:row;
     }

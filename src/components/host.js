@@ -7,7 +7,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 const HostWrapper = styled.div`
     width:100%;
-    margin-top: 50px;
+    margin-top: 0px;
 `
 
 const HostContainerLeft = styled.div`

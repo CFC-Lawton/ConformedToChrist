@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components";
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 const HeaderStyle = styled.header`
   margin: 0 auto;
@@ -61,6 +62,35 @@ const HeaderStyle = styled.header`
       }
     }
 
+    button{
+      background:#000;
+      border:none;
+      color:var(--c2c-red);
+      cursor:pointer;
+      margin:0;
+      padding:0;
+    }
+
+    a{
+      color:var(--c2c-red);
+      text-decoration:none;
+    }
+
+    a:link{
+      color:var(--c2c-red);
+      text-decoration:none;
+    }
+
+    a:hover{
+      color:var(--c2c-red);
+      text-decoration:none;
+    }
+
+    a:visited{
+      color:var(--c2c-red);
+      text-decoration:none;
+    }
+
   }
 `;
 
@@ -69,7 +99,21 @@ const HeaderStyle = styled.header`
 //or
 //H1 appears when screen is less than 999px
 
-const Header = ({ siteTitle }) => (
+export default function Header({ siteTitle, links}){
+
+  function hasPathOrScroll(link){
+    if(link.path.includes('#')){
+      return(
+        <li key={link.title}><button onClick={()=> scrollTo(link.path)}>{link.title}</button></li>
+      )
+    }else{
+      return(
+       <li key={link.title}><button><Link to={link.path}>{link.title}</Link></button></li> 
+      )
+    }
+  }
+  
+  return(
   <HeaderStyle>
     <h1>
       <Link
@@ -79,11 +123,13 @@ const Header = ({ siteTitle }) => (
       </Link></h1>
     <nav>
       <ul>
-        <li>Home</li>
-        <li>Podcasts</li>
+        {links.map(function(link){
+          const navItem = hasPathOrScroll(link);
+          return navItem;
+        })}
       </ul>
     </nav>
   </HeaderStyle >
-)
+)}
 
-export default Header
+
