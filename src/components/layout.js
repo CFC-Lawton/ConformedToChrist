@@ -1,6 +1,7 @@
 
 import * as React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import {FaFacebook, FaInstagram} from 'react-icons/fa';
 
 import Header from "./header";
 import GlobalStyle from "../styles/Global";
@@ -106,6 +107,16 @@ const Footer = styled.footer`
     margin: 5px 5px 5px 20px;
     text-align:center;
   }
+
+  a{
+    text-decoration:none;
+    color:#fff;
+  }
+
+  a:visited{
+    text-decoration:none;
+    color:#fff;
+  }
 `
 
 
@@ -152,7 +163,7 @@ const Layout = ({ children, links }) => {
         <main>{children}</main>
 
         <Footer>
-          <p>© {new Date().getFullYear()} &middot; Christ's Fellowship Church</p>
+          <p>© {new Date().getFullYear()} &middot; Christ's Fellowship Church &nbsp; <a href="https://www.facebook.com/p/Conformed-to-Christ-100064320241249/" target="_blank" rel="noopener noreferrer"><FaFacebook/></a> &nbsp; <a href="https://www.instagram.com/conformed2christ/"><FaInstagram/></a></p>
         </Footer>
       </div>
     </>
