@@ -30,6 +30,10 @@ const PodcastWrapper = styled.div`
     color:var(--c2c-red);
     text-decoration:none;
   }
+
+  h2{
+    font-size: 2rem;
+  }
 `
 
 export default function Podcast({data}){
@@ -41,6 +45,7 @@ export default function Podcast({data}){
       <Layout links={links}>
           <AudioPlayer image={data.podcastRssFeedEpisode.item.itunes.image} title={data.podcastRssFeedEpisode.item.title} urlSrc={data.podcastRssFeedEpisode.item.enclosure.url} episode={data.podcastRssFeedEpisode.item.itunes.episode}/>
           <PodcastWrapper>
+          <h2>Show Notes</h2>
           <p>{data.podcastRssFeedEpisode.item.itunes.summary.split('Conformed to Christ aims ')[0]}</p>
           <p>Conformed to Christ aims to engage the mind, affect the heart, and call people to follow Christ. Additionally, our aim is to introduce and explain passages of Scripture and difficult theological doctrines in a down-to-earth and easy-to-grasp manner. Theology and the Bible should impact your life, and our goal is that we might play a small part in seeing that happen. Conformed to Christ is a ministry of <a href="https://cfclawton.org/">Christ's Fellowship Church.</a></p>
           </PodcastWrapper>

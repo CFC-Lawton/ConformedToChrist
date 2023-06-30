@@ -9,7 +9,7 @@ const PodcastContainer = styled.div`
     display: flex;
     flex-direction:column;
     width: 80%;
-    margin: 60px auto;
+    margin: 5px auto;
     @media (min-width:1000px){
         flex-direction:row;
     }
