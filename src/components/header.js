@@ -123,7 +123,7 @@ export default function Header({ siteTitle, links}){
       </Link></h1>
     <nav>
       <ul>
-        {links.map(function(link){
+        {links?.map(function(link){
           const navItem = hasPathOrScroll(link);
           return navItem;
         })}
