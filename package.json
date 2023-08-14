@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Christ's Fellowship Church",
   "dependencies": {
-    "@fontsource/open-sans": "^5.0.3",
+    "@fontsource/open-sans": "^5.0.9",
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
@@ -20,10 +20,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
-    "styled-components": "^6.0.1"
+    "styled-components": "^6.0.7"
   },
   "devDependencies": {
-    "prettier": "^2.8.8"
+    "prettier": "^3.0.1"
   },
   "keywords": [
     "gatsby"
