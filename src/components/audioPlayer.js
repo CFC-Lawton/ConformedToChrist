@@ -209,7 +209,7 @@ export default function AudioPlayer({image, title, urlSrc, episode}){
     return(
         <PodcastContainer>
             <PodcastImage src={image}/>
-            <audio  onLoadedMetadata={onLoadedMetadata} ref={audioPlayer} src={urlSrc} preload ="true"/>
+            <audio  onLoadedMetadata={onLoadedMetadata} ref={audioPlayer} src={urlSrc} preload ="metadata"/>
             <AudioPlayerContainer>
              <h1>{title}</h1>   
             <ProgressContainer>
