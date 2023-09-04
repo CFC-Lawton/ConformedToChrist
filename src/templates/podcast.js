@@ -2,7 +2,7 @@ import * as React from 'react';
 import {graphql} from 'gatsby';
 import styled from 'styled-components';
 import Layout from '../components/layout';
-import AudioPlayer from '../components/audioPlayer'; 
+import AudioPlayerContainer from '../components/audioPlayer'; 
 import PodcastHosts from '../components/podcastHosts';
 
 
@@ -43,7 +43,7 @@ export default function Podcast({data}){
   
     return(
       <Layout links={links}>
-          <AudioPlayer image={data.podcastRssFeedEpisode.item.itunes.image} title={data.podcastRssFeedEpisode.item.title} urlSrc={data.podcastRssFeedEpisode.item.enclosure.url} episode={data.podcastRssFeedEpisode.item.itunes.episode}/>
+          <AudioPlayerContainer image={data.podcastRssFeedEpisode.item.itunes.image} title={data.podcastRssFeedEpisode.item.title} urlSrc={data.podcastRssFeedEpisode.item.enclosure.url} episode={data.podcastRssFeedEpisode.item.itunes.episode}/>
           <PodcastWrapper>
           <h2>Show Notes</h2>
           <p>{data.podcastRssFeedEpisode.item.itunes.summary.split('Conformed to Christ aims ')[0]}</p>

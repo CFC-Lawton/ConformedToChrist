@@ -8,7 +8,7 @@ import CalloutBox from "../components/calloutbox";
 import Mission from "../components/mission";
 import Host from "../components/host";
 import Podcasts from "../components/podcasts";
-import AudioPlayer from "../components/audioPlayer";
+import AudioPlayerContainer from "../components/audioPlayer";
 import PodcastHosts from "../components/podcastHosts";
 
 
@@ -134,7 +134,7 @@ function IndexPage(){
       </CalloutBox>
       <Mission />
       <HeaderText text={'Latest Episode'} id={'latestEpisode'}/>
-      <AudioPlayer image={podcasts[0].node.item.itunes.image} title={podcasts[0].node.item.title} urlSrc={podcasts[0].node.item.enclosure.url} episode={podcasts[0].node.item.itunes.episode}/>
+      <AudioPlayerContainer image={podcasts[0].node.item.itunes.image} title={podcasts[0].node.item.title} urlSrc={podcasts[0].node.item.enclosure.url} episode={podcasts[0].node.item.itunes.episode}/>
      <HeaderText text={'The Hosts'}/>
       {hostData.map(host => <Host image={host.image} flowDirection={host.flowDirection} bioContent={host.bioContent} key={host.bioContent.name} />)}
       <HeaderText text="Episodes" id="episodes"/>
