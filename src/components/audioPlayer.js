@@ -1,9 +1,8 @@
 import * as React from 'react';
-import {useState,useEffect, useRef} from 'react';
 import styled from 'styled-components';
-import { ImForward2, ImBackward, ImPlay2, ImPause } from "react-icons/im";
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import '../styles/AudioPlayerStyles.css';
 
 
 
@@ -38,7 +37,7 @@ export default function AudioPlayerContainer({image, title, urlSrc, episode}){
     return(
         <PodcastContainer>
             <PodcastImage src={image}/>
-            <AudioPlayer src={urlSrc} header={`Episode ${episode}: ${title}`} layout='stacked-reverse' customAdditionalControls={[]} customVolumeControls={[]} />
+            <AudioPlayer src={urlSrc} header={`Episode ${episode}: ${title}`} layout='horizontal-reversed' customAdditionalControls={[]} customVolumeControls={[]} />
         </PodcastContainer>
     )
 }
