@@ -10,6 +10,7 @@ import Host from "../components/host";
 import Podcasts from "../components/podcasts";
 import AudioPlayerContainer from "../components/audioPlayer";
 import PodcastHosts from "../components/podcastHosts";
+import LatestEpisode from "../components/latestEpisode";
 
 
 
@@ -134,7 +135,8 @@ function IndexPage(){
       </CalloutBox>
       <Mission />
       <HeaderText text={'Latest Episode'} id={'latestEpisode'}/>
-      <AudioPlayerContainer image={podcasts[0].node.item.itunes.image} title={podcasts[0].node.item.title} urlSrc={podcasts[0].node.item.enclosure.url} episode={podcasts[0].node.item.itunes.episode}/>
+      <LatestEpisode title={podcasts[0].node.item.title} episode={podcasts[0].node.item.itunes.episode} image={podcasts[0].node.item.itunes.image} description={podcasts[0].node.item.content}/>
+      {console.log(podcasts[0].node.item)}
      <HeaderText text={'The Hosts'}/>
       {hostData.map(host => <Host image={host.image} flowDirection={host.flowDirection} bioContent={host.bioContent} key={host.bioContent.name} />)}
       <HeaderText text="Episodes" id="episodes"/>
