@@ -28,6 +28,7 @@ const Episode = styled.div`
 const ImgTextWrapper = styled.div`
     display: flex;
     width: 80%;
+    flex-direction:column;
     justify-content:space-between;
     margin: 20px auto;
     border-top: solid 4px var(--c2c-red);
@@ -35,14 +36,24 @@ const ImgTextWrapper = styled.div`
     padding: 20px;
     img{
         flex: 1;
-        width:200px;
+        width:80%;
         border-radius: 15px;
-        margin-right: 20px;
+        margin: 0 auto;
+
     }
 
     p{
         flex: 3;
         padding: 10px;
+    }
+
+    @media (min-width:1000px){
+        flex-direction: row;
+
+        img{
+            width:200px;
+            margin-right: 20px;
+        }
     }
 
 `; 
