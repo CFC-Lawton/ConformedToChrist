@@ -18,7 +18,7 @@ const PodcastContainer = styled.div`
 
 const PodcastImage = styled.img`
     width: 50%;
-    margin: 0 auto;
+    margin: 100px auto;
     display: block;
     border-radius: 10px;
     border-bottom: 10px solid var(--c2c-red);
