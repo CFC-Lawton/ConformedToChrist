@@ -69,7 +69,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         theme_color: `#000000`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/c2c.png`, // This path is relative to the root of the site.
         //change this to a small logo for the conformed to Christ podcast 
       },
     },

@@ -17,12 +17,16 @@ const PodcastContainer = styled.div`
 `
 
 const PodcastImage = styled.img`
-    width: 50%;
-    margin: 100px auto;
+    width: 80%;
+    margin: 100px auto 20px auto;
     display: block;
     border-radius: 10px;
     border-bottom: 10px solid var(--c2c-red);
     border-top: 10px solid var(--c2c-red);
+
+    @media (min-width:600px){
+        width: 200px;
+    }
     @media (min-width:1000px){
         width:200px;
         height:200px;
