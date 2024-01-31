@@ -65,6 +65,7 @@ function IndexPage() {
           }
         }
       }
+
       allFile(filter: { relativeDirectory: { eq: "hosts" } }) {
         edges {
           node {

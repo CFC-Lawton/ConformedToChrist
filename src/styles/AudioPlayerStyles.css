@@ -1,33 +1,33 @@
-.rhap_container{
-    color:#fff;
-    background-color: rgba(0,0,0,0);
+.rhap_container {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.rhap_progress-filled{
-    background-color: var(--c2c-red);
+.rhap_progress-filled {
+  background-color: var(--c2c-red);
 }
 
-.rhap_main-controls-button{
-    color:var(--c2c-red);
+.rhap_main-controls-button {
+  color: var(--c2c-red);
 }
 
-.rhap_current-time{
-    color: #fff;
+.rhap_current-time {
+  color: #fff;
 }
 
-.rhap_total-time{
-    color:#fff;
+.rhap_total-time {
+  color: #fff;
 }
 
-.rhap_progress-bar{
-    background-color:#fff;
+.rhap_progress-bar {
+  background-color: #fff;
 }
 
-.rhap_header{
-    font-weight:bold;
-    font-size:2rem;
+.rhap_header {
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-.rhap_progress-indicator{
-    background-color: var(--c2c-red);
+.rhap_progress-indicator {
+  background-color: var(--c2c-red);
 }

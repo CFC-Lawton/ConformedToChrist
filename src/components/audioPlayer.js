@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import AudioPlayer, { RHAP_UI } from "react-h5-audio-player"
 import "react-h5-audio-player/lib/styles.css"
@@ -38,9 +39,30 @@ export default function AudioPlayerContainer({
   urlSrc,
   episode,
 }) {
+  const SplashArt = useStaticQuery(graphql`
+    query Splash {
+      file(relativeDirectory: { eq: "splash" }) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  `)
+
+  console.log(
+    SplashArt.file.childImageSharp.gatsbyImageData.images.fallback.src,
+  )
+
   return (
     <PodcastContainer>
-      <PodcastImage src={image} alt={`Cover Art for Episode #${episode}`} />
+      <PodcastImage
+        src={
+          image
+            ? image
+            : SplashArt.file.childImageSharp.gatsbyImageData.images.fallback.src
+        }
+        alt={`Cover Art for Episode #${episode}`}
+      />
       <AudioPlayer
         src={urlSrc}
         header={`Episode ${episode}: ${title}`}

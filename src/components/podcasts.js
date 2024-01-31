@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
@@ -63,13 +64,28 @@ const SpacerDiv = styled.div`
 `
 
 export default function Podcasts({ podcasts }) {
+  const splash = useStaticQuery(graphql`
+    query Splash {
+      file(relativeDirectory: { eq: "splash" }) {
+        childImageSharp {
+          gatsbyImageData
+        }
+      }
+    }
+  `)
+
   return (
     <PodcastsWrapper>
       {podcasts.map(podcast => {
         return (
           <Podcast key={podcast.node.id}>
             <img
-              src={podcast.node.item.itunes.image}
+              src={
+                podcast.node.item.itunes.image
+                  ? podcast.node.item.itunes.image
+                  : splash.file.childImageSharp.gatsbyImageData.images.fallback
+                      .src
+              }
               alt={`Cover Art for Episode #${podcast.node.item.itunes.episode}`}
             />
             <h3>{`Episode #${podcast.node.item.itunes.episode}: ${podcast.node.item.title}`}</h3>
